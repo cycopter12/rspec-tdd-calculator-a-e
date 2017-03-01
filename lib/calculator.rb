@@ -3,4 +3,8 @@ class Calculator
   def initialize(num)
     @num=num
   end
+
+  def result
+  end
+
 end

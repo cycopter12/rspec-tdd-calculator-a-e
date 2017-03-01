@@ -13,6 +13,12 @@ describe Calculator do
     end
   end
 
+  describe 'Accessors' do
+    it 'it should be readonly.' do
+    expect(@my_cal.result).to eq(1)
+    end
+  end
+
   # Tests go here
 end
 
