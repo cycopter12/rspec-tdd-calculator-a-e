@@ -18,10 +18,15 @@ describe Calculator do
     expect(@my_cal.result).to eq(1)
     end
     it 'should reset the result to x.' do
-      expect(@my_cal.reset(3)).to eq(3)
+      expect(@my_cal.reset(2)).to eq(2)
     end
   end
 
+  describe 'Methods' do
+    it 'should add x to the internal result value, if x can be a valid number'
+    @my_cal.add(1)
+    expect(@my_cal.result).to eq(3)
+  end
   # Tests go here
 end
 
