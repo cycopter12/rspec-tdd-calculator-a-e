@@ -6,6 +6,7 @@ class Calculator
 
   def initialize(num)
     @num=num
+    @can_undo=false
   end
 
   def result
@@ -20,6 +21,7 @@ class Calculator
     raise TypeError unless x.is_a? Numeric
     @num += x
     @@result_history.push(@num)
+    @can_undo=false
     self
   end
 
@@ -27,18 +29,21 @@ class Calculator
     raise TypeError if x.is_a? String
     @num -= x
     @@result_history.push(@num)
+    @can_undo=false
     self
   end
   def multiply(x)
     raise TypeError if x.is_a? String
     @num *= x
     @@result_history.push(@num)
+    @can_undo=false
     self
   end
   def divide(x)
     raise TypeError unless x.is_a? Numeric
     @num /= x
     @@result_history.push(@num)
+    @can_undo=false
     self
   end
 
@@ -57,6 +62,16 @@ class Calculator
 
     def undo
       @num = @@result_history[@@result_history.length-2]
+      @can_undo=true
+    end
+
+    def redo
+      if @can_undo
+        @can_undo=false
+      @num = @@result_history[@@result_history.length-1]
+    else
+      p "you are not allowed"
+      end
     end
   end
 end

@@ -73,11 +73,15 @@ describe Calculator do
       @my_cal.undo
       expect(@my_cal.num).to eq(2)
     end
+  end
   describe 'Redo' do
     it 'should redo the previous undone operation, restoring the result value.' do
-      expect(@my_cal.redo).to eq(2)
+      expect(@my_cal.redo).to eq(4)
+      end
+      it 'should not remove the ability to perform redos if new action is executed.' do
+      @my_cal.subtract(2)
+      expect(@my_cal.redo).to eq("you are not allowed")
     end
-
   end
 end
 
