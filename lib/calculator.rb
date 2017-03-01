@@ -15,7 +15,7 @@ class Calculator
   end
 
   def add(x)
-    raise TypeError if x.is_a? String
+    raise TypeError unless x.is_a? Numeric
     @num += x
   end
 
