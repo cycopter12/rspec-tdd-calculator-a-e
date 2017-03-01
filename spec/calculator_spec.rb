@@ -58,8 +58,12 @@ describe Calculator do
       expect { @my_cal.divide('abc') }.to raise_error(TypeError)
     end
     it 'should all methods should be chainable in any order' do
-      @my_cal.add(2).subtract(1)
-      expect(@my_cal.result).to eq(3)
+      @my_cal.add(2).subtract(1).divide(3).multiply(1)
+      expect(@my_cal.result).to eq(1)
+    end
+    it 'operation would apply the addition operation with the value of x' do
+      @my_cal.operation('add',1)
+      expect(@my_cal.result).to eq(2)
     end
   end
   # Tests go here

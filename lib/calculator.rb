@@ -17,17 +17,26 @@ class Calculator
   def add(x)
     raise TypeError unless x.is_a? Numeric
     @num += x
+    self
   end
 
   def subtract(x)
     raise TypeError if x.is_a? String
     @num -= x
+    self
   end
   def multiply(x)
     raise TypeError if x.is_a? String
     @num *= x
+    self
   end
   def divide(x)
+    raise TypeError unless x.is_a? Numeric
+    @num /= x
+    self
+  end
+
+  def operation
 
   end
 end
