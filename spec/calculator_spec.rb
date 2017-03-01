@@ -63,15 +63,21 @@ describe Calculator do
     end
     it 'operation would apply the addition operation with the value of x' do
       @my_cal.operation('add',1)
-      expect(@my_cal.result).to eq(2)
+      expect(@my_cal.result).to eq(2)  #WE ARE AT 2
     end
   end
   # Tests go here
   describe 'Undo' do
     it 'should undo the previous operation, restoring the result value.' do
-      @my_cal.undo()
-      expect(@my_cal.result).to eq(1)
+      @my_cal.add(2)
+      @my_cal.undo
+      expect(@my_cal.num).to eq(2)
     end
+  describe 'Redo' do
+    it 'should redo the previous undone operation, restoring the result value.' do
+      expect(@my_cal.redo).to eq(2)
+    end
+
   end
 end
 

@@ -2,6 +2,8 @@ class Calculator
   # your class goes here
   attr_reader :num
 
+  @@result_history = []
+
   def initialize(num)
     @num=num
   end
@@ -17,22 +19,26 @@ class Calculator
   def add(x)
     raise TypeError unless x.is_a? Numeric
     @num += x
+    @@result_history.push(@num)
     self
   end
 
   def subtract(x)
     raise TypeError if x.is_a? String
     @num -= x
+    @@result_history.push(@num)
     self
   end
   def multiply(x)
     raise TypeError if x.is_a? String
     @num *= x
+    @@result_history.push(@num)
     self
   end
   def divide(x)
     raise TypeError unless x.is_a? Numeric
     @num /= x
+    @@result_history.push(@num)
     self
   end
 
@@ -49,7 +55,8 @@ class Calculator
       p "method does not exist"
     end
 
-    def upon()
+    def undo
+      @num = @@result_history[@@result_history.length-2]
     end
   end
 end
