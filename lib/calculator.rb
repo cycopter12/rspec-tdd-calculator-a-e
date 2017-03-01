@@ -36,7 +36,20 @@ class Calculator
     self
   end
 
-  def operation
+  def operation(x,y)
+    if x == "add"
+      add(y)
+    elsif x =="subtract"
+      subtract(y)
+    elsif x =="divide"
+      divide(y)
+    elsif x =="multiply"
+      multiply(y)
+    else
+      p "method does not exist"
+    end
 
+    def upon()
+    end
   end
 end

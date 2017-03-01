@@ -67,6 +67,12 @@ describe Calculator do
     end
   end
   # Tests go here
+  describe 'Undo' do
+    it 'should undo the previous operation, restoring the result value.' do
+      @my_cal.undo()
+      expect(@my_cal.result).to eq(1)
+    end
+  end
 end
 
 # describe Tree do
