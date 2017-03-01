@@ -49,6 +49,16 @@ it 'should check if x is a number' do
   # @my_cal.add("abc")
 expect{@my_cal.multiply('abc')}.to raise_error(TypeError)
 end
+it 'should divide the internal result value by x, if x can be a valid number' do
+@my_cal.divide(1)
+expect(@my_cal.result).to eq(2)
+end
+it 'should check if x is a number' do
+  # @my_cal.add("abc")
+expect{@my_cal.divide('abc')}.to raise_error(TypeError)
+end
+
+
 end
   # Tests go here
 end

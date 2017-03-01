@@ -24,5 +24,10 @@ class Calculator
     @num -= x
   end
   def multiply(x)
+    raise TypeError if x.is_a? String
+    @num *= x
+  end
+  def divide(x)
+
   end
 end
