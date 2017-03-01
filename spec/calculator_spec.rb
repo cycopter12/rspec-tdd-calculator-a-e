@@ -17,6 +17,9 @@ describe Calculator do
     it 'it should be readonly.' do
     expect(@my_cal.result).to eq(1)
     end
+    it 'should reset the result to x.' do
+      expect(@my_cal.reset(3)).to eq(3)
+    end
   end
 
   # Tests go here
