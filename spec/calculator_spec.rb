@@ -23,10 +23,11 @@ describe Calculator do
   end
 
   describe 'Methods' do
-    it 'should add x to the internal result value, if x can be a valid number'
+    it 'should add x to the internal result value, if x can be a valid number' do
     @my_cal.add(1)
     expect(@my_cal.result).to eq(3)
   end
+end
   # Tests go here
 end
 

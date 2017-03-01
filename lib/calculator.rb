@@ -14,4 +14,7 @@ class Calculator
     @num=x
   end
 
+  def add(x)
+  end
+
 end
