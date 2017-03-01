@@ -15,12 +15,14 @@ class Calculator
   end
 
   def add(x)
-    raise TypeError unless x.is_a? String
+    raise TypeError if x.is_a? String
     @num += x
   end
 
   def subtract(x)
-
+    raise TypeError if x.is_a? String
+    @num -= x
   end
-
+  def multiply(x)
+  end
 end
